@@ -14,17 +14,17 @@
 </template>
 
 <script>
-import data from "../shared/data";
+import { load, removeItem, countries } from "../shared/data";
 import { onMounted, computed } from "vue";
 
 export default {
   setup() {
 
-    onMounted(async () => await data.load());
+    onMounted(async () => await load());
 
     return {
-      countries: data.countries,
-      removeItem: data.removeItem
+      countries,
+      removeItem
     };
   },
 };
